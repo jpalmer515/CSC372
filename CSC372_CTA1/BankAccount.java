@@ -1,46 +1,49 @@
+package CSC372_CTA1;
 //Setup constructor with variables
 //Need a list to hold transaction information
-package CSC372_CTA1;
+//package CSC372_CTA1.src;
 //import java.util.Scanner;
 
 public class BankAccount {
-    //For requesting user input
-    //Scanner userInput = new Scanner(System.in);
     
     String firstName;
     String lastName;
     int accountID;
     double balance;
 
-    //Person object
     public BankAccount() {
         this.balance = 0.00;
     }
 
-    // Old code initially setup for user input
-    // public void getCustomerInfo() {
-    //     System.out.print("Please enter your first name: ");
-    //         For requesting user input
-    //         String firstName = userInput.next();
-    //     System.out.print("Please enter your last name: ");
-    //         For requesting user input
-    //         String lastName = userInput.next();
-    //     System.out.print("Please enter your account ID: ");
-    //         For requesting user input
-    //         int accountID = userInput.nextInt();
-    // }
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAccountID() {
+        return accountID;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAccountID(int accountID) {
+        this.accountID = accountID;
+    }
 
     public void deposit(double depositAmount) {
-            //System.out.println("Please enter the amount you'd like to deposit: ");
-            //For requesting user input
-            //double depositAmount = userInput.nextDouble(); 
             balance = balance + depositAmount;
     }
 
     public void withdrawal(double withdrawalAmount) {
-            //System.out.println("Please enter the amount you'd like to withdraw: ");
-            //For requesting user input
-            //double withdrawalAmount = userInput.nextDouble();
             balance = balance - withdrawalAmount;
     }
 
