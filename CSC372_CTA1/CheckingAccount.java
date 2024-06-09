@@ -5,10 +5,10 @@ package CSC372_CTA1;
 
 public class CheckingAccount extends BankAccount {
 
-    public double processWithdrawal() {
-        if ( < 0) {
+    public void processWithdrawal() {
+        if (withdrawal() < 0) {
             balance = balance - 30.00;
-            return balance;
+            System.out.println(balance);
         }
     }
 
