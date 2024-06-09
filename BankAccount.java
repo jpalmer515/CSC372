@@ -1,8 +1,6 @@
-package CSC372_CTA1;
-//Setup constructor with variables
-//Need a list to hold transaction information
-//package CSC372_CTA1.src;
-//import java.util.Scanner;
+// Create getVariable and setVariable for variables
+// Create constructor with the name of the class. Set balance to zero
+// Create basic returns for deposit, withdrawal, balance and summary
 
 public class BankAccount {
     
