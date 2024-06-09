@@ -1,64 +1,48 @@
-package CSC372_CTA1;
 //Setup constructor with variables
 //Need a list to hold transaction information
-//Use list to hold customer information, that will validate their balance and transaction history
+package CSC372_CTA1;
+//import java.util.Scanner;
 
-import java.util.Scanner;
-import java.util.ArrayList;
 public class BankAccount {
-    Scanner userInput = new Scanner(System.in);
-
-    ArrayList accountInformation = new ArrayList();
+    //For requesting user input
+    //Scanner userInput = new Scanner(System.in);
     
-    private String firstName;
-    private String lastName;
-    private int accountID;
-    private double balance;
+    String firstName;
+    String lastName;
+    int accountID;
+    double balance;
 
     //Person object
-    public void customerInfo() {
-        try {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.accountID = accountID;
-            this.balance = balance;
-        }
-        catch (Exception e) {
-            System.out.println("Error!" + e.getMessage());
-        }
+    public BankAccount() {
+        this.balance = 0.00;
     }
 
-    public void initializeBalance() {
-        try {
-            this.balance = 0.00;
-        }
-        catch (Exception e) {
-            System.out.println("Error!" + e.getMessage());
-        }
+    public void getCustomerInfo() {
+        System.out.print("Please enter your first name: ");
+            //For requesting user input
+            //String firstName = userInput.next();
+        System.out.print("Please enter your last name: ");
+            //For requesting user input
+            //String lastName = userInput.next();
+        System.out.print("Please enter your account ID: ");
+            //For requesting user input
+            //int accountID = userInput.nextInt();
     }
 
     public double deposit() {
-        try {
             System.out.println("Please enter the amount you'd like to deposit: ");
-            double depositAmount = userInput.nextDouble(); 
+            //For requesting user input
+            //double depositAmount = userInput.nextDouble(); 
             balance = balance + depositAmount;
-            System.out.printf("Your new balance: $" + balance);
-        }
-        catch (Exception e) {
-            System.out.println("Error!" + e.getMessage());
-        }
+            return balance;
     }
 
     public double withdrawal() {
-        try {
             System.out.println("Please enter the amount you'd like to withdraw: ");
-            double withdrawalAmount = userInput.nextDouble();
+            //For requesting user input
+            //double withdrawalAmount = userInput.nextDouble();
             balance = balance - withdrawalAmount;
-            System.out.printf("Your new balance: $" + balance);
-        }
-        catch (Exception e) {
-            System.out.println("Error!" + e.getMessage());
-        }
+            return balance;
     }
 
     public double getBalance() {
@@ -66,14 +50,9 @@ public class BankAccount {
     }
 
     public void accountSummary() {
-        try {
-            System.out.printf("Your balance is: $" + balance);
-            System.out.println("Below is your account transaction history: ");
-            System.out.println("-------------------------------------------");
-            System.out.println(accountInformation);
-        }
-        catch (Exception e) {
-            System.out.println("Error!" + e.getMessage());
-        }
+            System.out.printf(firstName);
+            System.out.println(lastName);
+            System.out.println(accountID);
+            System.out.println(balance);
     }
 }
