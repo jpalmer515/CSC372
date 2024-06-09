@@ -21,34 +21,59 @@ public class BankAccount {
             this.firstName = firstName;
             this.lastName = lastName;
             this.accountID = accountID;
+            this.balance = balance;
         }
         catch (Exception e) {
             System.out.println("Error!" + e.getMessage());
         }
     }
 
-    public void deposit() {
-        System.out.println("Please enter the amount you'd like to deposit: ");
-        double depositAmount = userInput.nextDouble(); 
-        balance = balance + depositAmount;
-        System.out.printf("Your new balance: $" + balance);
+    public void initializeBalance() {
+        try {
+            this.balance = 0.00;
+        }
+        catch (Exception e) {
+            System.out.println("Error!" + e.getMessage());
+        }
     }
 
-    public void withdrawal() {
-        System.out.println("Please enter the amount you'd like to withdraw: ");
-        double withdrawalAmount = userInput.nextDouble();
-        balance = balance - withdrawalAmount;
-        System.out.printf("Your new balance: $" + balance);
+    public double deposit() {
+        try {
+            System.out.println("Please enter the amount you'd like to deposit: ");
+            double depositAmount = userInput.nextDouble(); 
+            balance = balance + depositAmount;
+            System.out.printf("Your new balance: $" + balance);
+        }
+        catch (Exception e) {
+            System.out.println("Error!" + e.getMessage());
+        }
     }
 
-    public void getBalance() {
-        System.out.printf("Your balance is: $" + balance);
+    public double withdrawal() {
+        try {
+            System.out.println("Please enter the amount you'd like to withdraw: ");
+            double withdrawalAmount = userInput.nextDouble();
+            balance = balance - withdrawalAmount;
+            System.out.printf("Your new balance: $" + balance);
+        }
+        catch (Exception e) {
+            System.out.println("Error!" + e.getMessage());
+        }
+    }
+
+    public double getBalance() {
+        return balance;
     }
 
     public void accountSummary() {
-        System.out.printf("Your balance is: $" + balance);
-        System.out.println("Below is your account transaction history: ");
-        System.out.println("-------------------------------------------");
-        System.out.println(accountInformation);
+        try {
+            System.out.printf("Your balance is: $" + balance);
+            System.out.println("Below is your account transaction history: ");
+            System.out.println("-------------------------------------------");
+            System.out.println(accountInformation);
+        }
+        catch (Exception e) {
+            System.out.println("Error!" + e.getMessage());
+        }
     }
 }
