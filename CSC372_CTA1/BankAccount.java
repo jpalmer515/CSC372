@@ -29,20 +29,18 @@ public class BankAccount {
             //int accountID = userInput.nextInt();
     }
 
-    public double deposit() {
-            System.out.println("Please enter the amount you'd like to deposit: ");
+    public void deposit(double depositAmount) {
+            //System.out.println("Please enter the amount you'd like to deposit: ");
             //For requesting user input
             //double depositAmount = userInput.nextDouble(); 
             balance = balance + depositAmount;
-            return balance;
     }
 
-    public double withdrawal() {
-            System.out.println("Please enter the amount you'd like to withdraw: ");
+    public void withdrawal(double withdrawalAmount) {
+            //System.out.println("Please enter the amount you'd like to withdraw: ");
             //For requesting user input
             //double withdrawalAmount = userInput.nextDouble();
             balance = balance - withdrawalAmount;
-            return balance;
     }
 
     public double getBalance() {
