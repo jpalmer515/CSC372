@@ -17,17 +17,18 @@ public class BankAccount {
         this.balance = 0.00;
     }
 
-    public void getCustomerInfo() {
-        System.out.print("Please enter your first name: ");
-            //For requesting user input
-            //String firstName = userInput.next();
-        System.out.print("Please enter your last name: ");
-            //For requesting user input
-            //String lastName = userInput.next();
-        System.out.print("Please enter your account ID: ");
-            //For requesting user input
-            //int accountID = userInput.nextInt();
-    }
+    // Old code initially setup for user input
+    // public void getCustomerInfo() {
+    //     System.out.print("Please enter your first name: ");
+    //         For requesting user input
+    //         String firstName = userInput.next();
+    //     System.out.print("Please enter your last name: ");
+    //         For requesting user input
+    //         String lastName = userInput.next();
+    //     System.out.print("Please enter your account ID: ");
+    //         For requesting user input
+    //         int accountID = userInput.nextInt();
+    // }
 
     public void deposit(double depositAmount) {
             //System.out.println("Please enter the amount you'd like to deposit: ");
@@ -48,7 +49,7 @@ public class BankAccount {
     }
 
     public void accountSummary() {
-            System.out.printf(firstName);
+            System.out.println(firstName);
             System.out.println(lastName);
             System.out.println(accountID);
             System.out.println(balance);

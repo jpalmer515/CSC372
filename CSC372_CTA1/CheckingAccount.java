@@ -9,11 +9,12 @@ public class CheckingAccount extends BankAccount {
         if (balance < 0) {
             balance = balance - 30.00;
             System.out.println(balance);
+            System.out.println("Overdraft Fee: -30.00");
         }
     }
 
     public void displayAccount() {
         accountSummary();
-        System.out.print("\n Interest rate is 5% APY.");
+        System.out.println("Interest rate is 5% APY.");
     }
 }
