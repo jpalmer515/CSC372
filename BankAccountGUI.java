@@ -67,5 +67,14 @@ public class BankAccountGUI {
         //Adding the panel to the frame
         frame.add(panelOne, BorderLayout.CENTER);
 
+        //Exit Action
+        buttonFour.addActionListener(new ActionListener() {
+            
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Exiting Successfully");
+                frame.dispose();
+            }
+        });
+
     }
 }
