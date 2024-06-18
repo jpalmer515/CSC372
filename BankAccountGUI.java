@@ -95,6 +95,7 @@ public class BankAccountGUI {
 
         //User deposit action
         buttonTwo.addActionListener(new ActionListener() {
+
             public void actionPerformed(ActionEvent e) {
                 String userDeposit = fieldDeposit.getText();
                 grabAccount.deposit(Double.parseDouble(userDeposit));
@@ -105,6 +106,7 @@ public class BankAccountGUI {
 
         //User withdraw action
         buttonThree.addActionListener(new ActionListener() {
+            
             public void actionPerformed(ActionEvent e) {
                 String userWithdraw = fieldWithdraw.getText();
                 grabAccount.withdrawal(Double.parseDouble(userWithdraw));
