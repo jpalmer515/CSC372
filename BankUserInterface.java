@@ -1,5 +1,5 @@
 import java.util.*;
-import java.awt.TextField;
+import javafx.scene.control.TextField;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
@@ -12,6 +12,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.paint.*;
+import javafx.scene.text.Text;
 
 public class BankUserInterface extends Application {
 
@@ -34,7 +35,7 @@ public class BankUserInterface extends Application {
 
 
         //Creating text field
-        Textfield emptyFieldOne = new TextField();
+        TextField emptyFieldOne = new TextField();
 
         //Create a new scene
         Scene bankInterfaceScene = new Scene(verticalBankMenu, 200, 100);
@@ -67,6 +68,15 @@ public class BankUserInterface extends Application {
             
             public void handle(ActionEvent event) {
 
+            }
+        });
+
+        //Exit the program
+        exitProgram.setOnAction(new EventHandler<ActionEvent>() {
+            
+            public void handle(ActionEvent event) {
+                System.out.println("Exiting Successfully");
+                stop(BankUserInterface);
             }
         });
 
