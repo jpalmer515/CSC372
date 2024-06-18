@@ -37,7 +37,6 @@ public class BankAccountGUI {
         //Initializing the panel
         JPanel panelOne = new JPanel();
         
-        
         //Adding the button to the new panel
         panelOne.add(buttonOne);
         panelOne.add(buttonTwo);

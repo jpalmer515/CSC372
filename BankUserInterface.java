@@ -2,6 +2,7 @@ import java.util.*;
 import javafx.scene.control.TextField;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -10,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.scene.paint.*;
 import javafx.scene.text.Text;
@@ -30,12 +32,11 @@ public class BankUserInterface extends Application {
         //Creating menu buttons
         MenuButton bankMenuButton = new MenuButton("Bank Menu", null, dateTimeDisplay, logTextContents, randomHueGreen, exitProgram);
 
-        //Creating a vertical menu button with user options
-        VBox verticalBankMenu = new VBox(bankMenuButton);
-
-
         //Creating text field
         TextField emptyFieldOne = new TextField();
+
+        //Creating a vertical menu button with user options
+        VBox verticalBankMenu = new VBox(bankMenuButton, emptyFieldOne);
 
         //Create a new scene
         Scene bankInterfaceScene = new Scene(verticalBankMenu, 200, 100);
@@ -57,9 +58,14 @@ public class BankUserInterface extends Application {
             
             public void handle(ActionEvent event) {
                 String logFilePath = "C:\\Users\\Jake\\OneDrive\\Desktop\\Folder\\School\\CSU Global\\CSC372\\CSC372_CTA3.txt";
-                BufferedWriter logWriter = new BufferedWriter(new FileWriter(logFilePath)) {
-                    logWriter.write(emptyFieldOne);
-                }
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(logFilePath))) {
+                    writer.write(emptyFieldOne.toString());
+                    writer.newLine();
+                    System.out.printf("\n Text field has converted to log.txt \n");
+                    } 
+                catch (IOException e) {
+                            System.out.println("\nAn error has occurred" + e.getMessage());
+                    }
             }
         });
 
@@ -76,7 +82,7 @@ public class BankUserInterface extends Application {
             
             public void handle(ActionEvent event) {
                 System.out.println("Exiting Successfully");
-                stop(BankUserInterface);
+                System.exit(0);
             }
         });
 
