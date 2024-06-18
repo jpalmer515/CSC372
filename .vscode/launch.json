@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "java",
             "name": "Current File",
@@ -21,6 +22,7 @@
             "type": "java",
             "name": "BankUserInterface",
             "request": "launch",
+            "vmArgs": "--module-path /path/to/javafx-sdk-22.0.1/lib --add-modules javafx.controls",
             "mainClass": "BankUserInterface",
             "projectName": "CSC372_8795193"
         },
