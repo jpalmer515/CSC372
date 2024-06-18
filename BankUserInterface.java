@@ -11,15 +11,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.VBox;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.scene.paint.*;
-import javafx.scene.text.Text;
+import java.util.Random;
 
 public class BankUserInterface extends Application {
 
     @Override
     public void start(Stage newBankInterface) throws Exception{
+
+        //Creating a random generator
+        Random rand = new Random();
 
         newBankInterface.setTitle("Bank Menu");
 
@@ -34,32 +35,41 @@ public class BankUserInterface extends Application {
 
         //Creating text field
         TextField emptyFieldOne = new TextField();
-
+        
         //Creating a vertical menu button with user options
         VBox verticalBankMenu = new VBox(bankMenuButton, emptyFieldOne);
-
+        
         //Create a new scene
         Scene bankInterfaceScene = new Scene(verticalBankMenu, 200, 100);
-        bankInterfaceScene.setFill(Color.GREEN);
+        verticalBankMenu.setStyle("-fx-background-color: #33cc33");
         newBankInterface.setScene(bankInterfaceScene);
         newBankInterface.show();
+        
+        //Set layout random green hues
+        verticalBankMenu.setStyle("-fx-background-color: #336600");
+        verticalBankMenu.setStyle("-fx-background-color: #1a6600");
+        verticalBankMenu.setStyle("-fx-background-color: #33cc59");
+        verticalBankMenu.setStyle("-fx-background-color: ##339933");
+        verticalBankMenu.setStyle("-fx-background-color: #009900");
+        verticalBankMenu.setStyle("-fx-background-color: #00ff00");
 
         //Retrieving and displaying the date and time
         dateTimeDisplay.setOnAction(new EventHandler<ActionEvent>() {
-
+            
             public void handle(ActionEvent event) {
                 String currentDateTime = new SimpleDateFormat("yyyy-mmm-dd HH:mm").format(new Date());
                 emptyFieldOne.setText("Date/Time: " + currentDateTime);
             }
         });
-
+        
         //Convert text box string into a "log.txt" file
         logTextContents.setOnAction(new EventHandler<ActionEvent>() {
             
             public void handle(ActionEvent event) {
-                String logFilePath = "C:\\Users\\Jake\\OneDrive\\Desktop\\Folder\\School\\CSU Global\\CSC372\\CSC372_CTA3.txt";
+                String fieldOneString = emptyFieldOne.getText();
+                String logFilePath = "C:\\Users\\Jake\\OneDrive\\Desktop\\Folder\\School\\CSU Global\\CSC372\\CSC372_CTA3\\log.txt";
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(logFilePath))) {
-                    writer.write(emptyFieldOne.toString());
+                    writer.write(fieldOneString);
                     writer.newLine();
                     System.out.printf("\n Text field has converted to log.txt \n");
                     } 
@@ -73,7 +83,7 @@ public class BankUserInterface extends Application {
         randomHueGreen.setOnAction(new EventHandler<ActionEvent>() {
             
             public void handle(ActionEvent event) {
-
+                
             }
         });
 
