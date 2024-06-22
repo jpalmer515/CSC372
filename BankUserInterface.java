@@ -22,6 +22,12 @@ public class BankUserInterface extends Application {
         //Creating a random generator
         Random rand = new Random();
 
+        //Setting min and max variables so that the rgb stays within 0-255
+        int minGreen = 100;
+        int maxGreen = 255;
+        int minRedBlue = 0;
+        int maxRedBlue = 125;
+
         newBankInterface.setTitle("Bank Menu");
 
         //Setting what the menu items display
@@ -45,14 +51,6 @@ public class BankUserInterface extends Application {
         newBankInterface.setScene(bankInterfaceScene);
         newBankInterface.show();
         
-        //Set layout random green hues
-        verticalBankMenu.setStyle("-fx-background-color: #336600");
-        verticalBankMenu.setStyle("-fx-background-color: #1a6600");
-        verticalBankMenu.setStyle("-fx-background-color: #33cc59");
-        verticalBankMenu.setStyle("-fx-background-color: ##339933");
-        verticalBankMenu.setStyle("-fx-background-color: #009900");
-        verticalBankMenu.setStyle("-fx-background-color: #00ff00");
-
         //Retrieving and displaying the date and time
         dateTimeDisplay.setOnAction(new EventHandler<ActionEvent>() {
             
@@ -83,7 +81,15 @@ public class BankUserInterface extends Application {
         randomHueGreen.setOnAction(new EventHandler<ActionEvent>() {
             
             public void handle(ActionEvent event) {
-                
+                //Generate random rgb numbers, with green always being higher so it will always be a green hue
+                float r = rand.nextFloat(maxRedBlue - minRedBlue) + minRedBlue;
+                float g = rand.nextFloat(maxGreen - minGreen) + minGreen;
+                float b = rand.nextFloat(maxRedBlue - minRedBlue) + minRedBlue;
+
+                //Applying random rgb to background layer
+                verticalBankMenu.setStyle("-fx-background-color: rgb("+ r + "," + g + "," + b + ");");
+                System.out.println(r + "," + g + "," + b + " test 1");
+                System.out.println(r+g+b+" test 2");
             }
         });
 
