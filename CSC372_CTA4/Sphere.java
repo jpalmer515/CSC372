@@ -3,7 +3,7 @@ package CSC372_CTA4;
 public class Sphere extends Shape {
 
     //Radius
-    Double sphereRadius = 10.00;
+    Double sphereRadius = 0.00;
 
     //Power variables
     int squaredPower = 2;

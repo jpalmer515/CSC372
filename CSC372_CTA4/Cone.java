@@ -3,8 +3,8 @@ package CSC372_CTA4;
 public class Cone  extends Shape {
     
     //Radius (double), height (double)
-    Double coneRadius = 10.00;
-    Double coneHeight = 10.00;
+    Double coneRadius = 0.00;
+    Double coneHeight = 0.00;
 
     //Power variables
     int squaredPower = 2;

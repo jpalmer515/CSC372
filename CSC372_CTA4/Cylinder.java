@@ -3,8 +3,8 @@ package CSC372_CTA4;
 public class Cylinder extends Shape {
 
     //Radius (double), height (double)
-    Double cylinderRadius = 10.00;
-    Double cylinderHeight = 10.00;
+    Double cylinderRadius = 0.00;
+    Double cylinderHeight = 0.00;
 
     //Power variables
     int squaredPower = 2;
