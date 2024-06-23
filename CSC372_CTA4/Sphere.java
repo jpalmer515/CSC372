@@ -24,9 +24,25 @@ public class Sphere extends Shape {
     }
 
     //Parameterized Constructor
-    public static void main(String[] args) {
-        Sphere newSphere = new Sphere();
+    Sphere(double sphereRadius) {
+        this.sphereRadius = sphereRadius;
     }
 
     //toString(), print surface area and volume
+    public String toString() {
+
+        //Converting double, surface area and volume, to a string
+        String sphereAreaString = Double.toString(this.surface_area());
+        String sphereVolumeString = Double.toString(this.volume());
+
+        //Printing the stringified surface area and volume
+        System.out.println("Sphere Surface Area: " + sphereAreaString);
+        System.out.println("Sphere Volume: " + sphereVolumeString);
+
+        //Using super to call a string back from the parent class, Shape
+        return super.toString();
+    }
 }
+
+// Sphere temp = new Sphere(15.0);
+// temp.radius;
