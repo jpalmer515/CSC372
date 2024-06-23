@@ -1,6 +1,6 @@
 package CSC372_CTA4;
 
-public class Cone  extends AbstractShape {
+public class Cone  extends Shape {
     
     //Radius (double), height (double)
 

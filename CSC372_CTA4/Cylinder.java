@@ -1,6 +1,6 @@
 package CSC372_CTA4;
 
-public class Cylinder extends AbstractShape {
+public class Cylinder extends Shape {
     
     //Radius (double), height (double)
 
