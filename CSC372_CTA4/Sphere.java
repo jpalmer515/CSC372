@@ -43,6 +43,3 @@ public class Sphere extends Shape {
         return super.toString();
     }
 }
-
-// Sphere temp = new Sphere(15.0);
-// temp.radius;
