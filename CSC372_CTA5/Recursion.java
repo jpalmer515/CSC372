@@ -2,19 +2,24 @@ import java.util.Scanner;
 
 public class Recursion {
 
-    //User input for the integers
-    int recursionNumber = UserInput.nextInt();
+    //Creating a new scanner for user inputs
+    Scanner UserInput = new Scanner(System.in);
 
-    //Recursive method, multiplying use integers
-    public int product(int n) {
-    
-    System.out.println("Please enter a whole number: ");
-    
-    if (n < 6) {
-        return product(n * recursionNumber);
+    //Method for performing recursion
+    public int multiplyFiveNumbers(int n) {
+
+        //Requesting user input for an integer
+        int recursionNumber = UserInput.nextInt();
+        System.out.println("Please enter a whole number: ");
+
+        if (n = recursionNumber) {
+            return recursionNumber;
+        }
+        return n * recursionNumber;
     }
-    else
-        return n;
-        System.out.println(n);
+
+    //Main method for printing the outcome of the multiplyFiveNUmbers method
+    public static void main(String[] args) {
+        System.out.println(multiplyFiveNumbers());
     }
 }

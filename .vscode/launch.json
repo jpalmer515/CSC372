@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Recursion",
+            "request": "launch",
+            "mainClass": "Recursion",
+            "projectName": "CSC372_8795193"
+        },
+        {
+            "type": "java",
             "name": "ShapeArray",
             "request": "launch",
             "mainClass": "ShapeArray",
