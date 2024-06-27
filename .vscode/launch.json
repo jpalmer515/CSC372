@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "restart",
+            "request": "launch",
+            "mainClass": "restart",
+            "projectName": "CSC372_8795193"
+        },
+        {
+            "type": "java",
             "name": "Recursion",
             "request": "launch",
             "mainClass": "Recursion",

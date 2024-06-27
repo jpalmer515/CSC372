@@ -1,25 +1,29 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Recursion {
 
     //Creating a new scanner for user inputs
-    Scanner UserInput = new Scanner(System.in);
+    static Scanner userInput = new Scanner(System.in);
 
     //Method for performing recursion
-    public int multiplyFiveNumbers(int n) {
+    public static double multiplyFiveNumbersFromUser(int numberOfLoops) {
 
-        //Requesting user input for an integer
-        int recursionNumber = UserInput.nextInt();
-        System.out.println("Please enter a whole number: ");
-
-        if (n = recursionNumber) {
-            return recursionNumber;
+        try {
+            if (numberOfLoops <= 0) {
+                return 1;
+            }
+            System.out.println("Enter a number: ");
+            double numberFromUser = userInput.nextDouble();
+            return numberFromUser *= multiplyFiveNumbersFromUser(numberOfLoops - 1);
         }
-        return n * recursionNumber;
+        catch (InputMismatchException e) {
+            System.out.println("Invalid entry");
+            return 1.00;
+        }
     }
 
-    //Main method for printing the outcome of the multiplyFiveNUmbers method
     public static void main(String[] args) {
-        System.out.println(multiplyFiveNumbers());
+        System.out.println(multiplyFiveNumbersFromUser(5));
     }
 }
