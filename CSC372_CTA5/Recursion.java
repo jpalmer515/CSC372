@@ -8,18 +8,20 @@ public class Recursion {
 
     //Method for performing recursion
     public static double multiplyFiveNumbersFromUser(int numberOfLoops) {
-
-        try {
-            if (numberOfLoops <= 0) {
-                return 1;
-            }
-            System.out.println("Enter a number: ");
-            double numberFromUser = userInput.nextDouble();
-            return numberFromUser *= multiplyFiveNumbersFromUser(numberOfLoops - 1);
+        
+        if (numberOfLoops <= 0) {
+            return 1;
         }
-        catch (InputMismatchException e) {
-            System.out.println("Invalid entry");
-            return 1.00;
+        else {
+            try {
+                System.out.println("Enter a number: ");
+                double numberFromUser = userInput.nextDouble();
+                return numberFromUser *= multiplyFiveNumbersFromUser(numberOfLoops - 1);
+            }
+            catch (InputMismatchException e) {
+                System.out.println("Invalid entry");
+                return 1.00;
+            }
         }
     }
 
