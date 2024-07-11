@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Student {
     
@@ -7,14 +8,15 @@ public class Student {
     String address;
 
     Student(String name, int rollno, String address) {
-        this.name = StudentName;
-        this.rollno = Studentrollno;
-        this.address = Studentaddress;
+        this.name = name;
+        this.rollno = rollno;
+        this.address = address;
     }
 
     public static void main(String[] args) {
 
-        Arraylist<Student> StudentList = new ArrayList<>();
+        ArrayList<Student> StudentList = new ArrayList<>();
+
         Student student1 = new Student("Harrison Martin", 100, "2717 Hill Street");
         Student student2 = new Student("Evangeline Park", 101, "4344 Dark Hollow Road");
         Student student3 = new Student("Brenda Dale", 102, "4061 Cottonwood Lane");
@@ -26,21 +28,25 @@ public class Student {
         Student student9 = new Student("Ruby Payne", 108, "3175 Poplar Street");
         Student student10 = new Student("Sandra Santana", 109, "48 Redbud Drive");
 
-    }
+        StudentList.add(student1);
+        StudentList.add(student2);
+        StudentList.add(student3);
+        StudentList.add(student4);
+        StudentList.add(student5);
+        StudentList.add(student6);
+        StudentList.add(student7);
+        StudentList.add(student8);
+        StudentList.add(student9);
+        StudentList.add(student10);
 
-    public static Comparator<Student> StudentNameComparator = new Comparator<Student>() {
-
-        @Override
-        public String compare(Student student1, Student student10) {
-            return String.compare(student1.getname(), student10.getname());
-        }
-    }
-
-    public static Comparator<Student> StudentIDComparator = new Comparator<Student>() {
-
-        @Override
-        public int compare(Student student1, Student student10) {
-            return Integer.compare(student1.getrollno(), student10.getrollno());
-        }
     }
 }
+
+class StudentNameCompare implements Comparator<Student> {
+
+    @Override
+    public int compare(Student comparisonVariable1, Student comparisonVariable2) {
+        return comparisonVariable1.name.compareTo(comparisonVariable2.name);
+    }
+}
+
