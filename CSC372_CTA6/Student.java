@@ -42,7 +42,7 @@ public class Student {
     }
 }
 
-class StudentNameCompare implements Comparator<Student> {
+class CompareStudentName implements Comparator<Student> {
 
     @Override
     public int compare(Student comparisonVariable1, Student comparisonVariable2) {
@@ -50,3 +50,14 @@ class StudentNameCompare implements Comparator<Student> {
     }
 }
 
+class CompareStudentRollNo implements Comparator<Student> {
+
+    @Override
+    public int compare(Student comparisonVariable1, Student comparisonVariable2) {
+        return Integer.toString(comparisonVariable1.rollno).compareTo(Integer.toString(comparisonVariable2.rollno));
+    }
+}
+
+// type variableName;
+// type variableName = initial value;
+// type variableName = newType.converstionfunction();
