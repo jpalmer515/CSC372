@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StudentDriver",
+            "request": "launch",
+            "mainClass": "StudentDriver",
+            "projectName": "CSC372_8795193"
+        },
+        {
+            "type": "java",
+            "name": "Student",
+            "request": "launch",
+            "mainClass": "Student",
+            "projectName": "CSC372_8795193"
+        },
+        {
+            "type": "java",
             "name": "restart",
             "request": "launch",
             "mainClass": "restart",
