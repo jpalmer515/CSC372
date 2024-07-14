@@ -1,11 +1,10 @@
 import java.util.ArrayList;
-// import java.util.Arrays;
 
 public class StudentDriver {
     
     static ArrayList<Student> StudentList = new ArrayList<Student>();
 
-    static void StudentSortingAlgorithm() {
+    static void StudentNameSortingAlgorithm(Student CompareStudentName) {
 
         int StudentListLength = StudentList.size();
 
@@ -15,7 +14,7 @@ public class StudentDriver {
 
             for (int j = i + 1; j < StudentListLength; j++) {
 
-                if (StudentList.get(StudentListMinimumIndex).rollno > StudentList.get(j).rollno) {
+                if (CompareStudentName.compare(StudentList.get(j).name, StudentList.get(StudentListMinimumIndex).name) < 0) {
                     StudentListMinimumIndex = j;
                 }
             }
@@ -26,7 +25,7 @@ public class StudentDriver {
     }
 
     public static void main(String[] args) {
-        
+
         Student newStudent1 = new Student("Harrison Martin", 16981, "2717 Hill Street");
         Student newStudent2 = new Student("Evangeline Park", 40735, "4344 Dark Hollow Road");
         Student newStudent3 = new Student("Brenda Dale", 924454, "4061 Cottonwood Lane");
@@ -53,7 +52,7 @@ public class StudentDriver {
         // System.out.println(StudentList);
         for (Student student: StudentList) System.out.println(student);
         System.out.println("-----------------------------------------------\n");
-        StudentSortingAlgorithm();
+        StudentNameSortingAlgorithm();
         for (Student student: StudentList) System.out.println(student);
     }
 }
