@@ -20,16 +20,16 @@ public class Student {
 class CompareStudentName implements Comparator<Student> {
 
     @Override
-    public int compare(Student comparisonVariable1, Student comparisonVariable2) {
-        return comparisonVariable1.name.compareTo(comparisonVariable2.name);
+    public int compare(Student StudentName1, Student StudentName2) {
+        return StudentName1.name.compareTo(StudentName2.name);
     }
 }
 
 class CompareStudentRollNo implements Comparator<Student> {
 
     @Override
-    public int compare(Student comparisonVariable1, Student comparisonVariable2) {
-        return Integer.toString(comparisonVariable1.rollno).compareTo(Integer.toString(comparisonVariable2.rollno));
+    public int compare(Student StudentRollNo1, Student StudentRollNo2) {
+        return Integer.toString(StudentRollNo1.rollno).compareTo(Integer.toString(StudentRollNo2.rollno));
     }
 }
 

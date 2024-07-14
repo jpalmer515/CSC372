@@ -4,7 +4,7 @@ public class StudentDriver {
     
     static ArrayList<Student> StudentList = new ArrayList<Student>();
 
-    static void StudentNameSortingAlgorithm(Student CompareStudentName) {
+    static void StudentSortingAlgorithm() {
 
         int StudentListLength = StudentList.size();
 
@@ -14,7 +14,7 @@ public class StudentDriver {
 
             for (int j = i + 1; j < StudentListLength; j++) {
 
-                if (CompareStudentName.compare(StudentList.get(j).name, StudentList.get(StudentListMinimumIndex).name) < 0) {
+                if (/*Comparator return here */ < 0) {
                     StudentListMinimumIndex = j;
                 }
             }
@@ -52,8 +52,55 @@ public class StudentDriver {
         // System.out.println(StudentList);
         for (Student student: StudentList) System.out.println(student);
         System.out.println("-----------------------------------------------\n");
-        StudentNameSortingAlgorithm();
+        StudentSortingAlgorithm(Student.CompareStudentName);
+        StudentSortingAlgorithm(Student.CompareStudentRollNo);
         for (Student student: StudentList) System.out.println(student);
     }
 }
 
+
+/* Selection Sorting Algorithm
+------------------------------
+static void StudentSortingAlgorithm() {
+
+    int StudentListLength = StudentList.size();
+
+    for (int i = 0; i < StudentListLength-1; i++) {
+
+        int StudentListMinimumIndex = i;
+
+        for (int j = i + 1; j < StudentListLength; j++) {
+
+            if (StudentList.get(StudentListMinimumIndex).rollno < StudentList.get(j).rollno) {
+                StudentListMinimumIndex = j;
+            }
+        }
+        Student tempHolder= StudentList.get(StudentListMinimumIndex);
+        StudentList.set(StudentListMinimumIndex, StudentList.get(i));
+        StudentList.set(i, tempHolder);
+    }
+}
+
+Bubble Sorting Algorithm
+------------------------
+static void StudentSortingAlgorithm() {
+
+    int StudentListLength = StudentList.size();
+
+    for (int i = 0; i < StudentListLength-1; i++) {
+
+        int StudentListMinimumIndex = i;
+
+        for (int j = i + 1; j < StudentListLength; j++) {
+
+            if (StudentList.get(StudentListMinimumIndex).rollno < StudentList.get(j).rollno) {
+                //Keeping indices the same
+                // new min value variable
+                // move min value to temp variable if lower
+            }
+            else {
+                Student tempHolder = StudentList.get(StudentListMinimumIndex);
+                StudentList.set(StudentListMinimumIndex, StudentList.get(j));
+                StudentList.set(j, tempHolder);
+    }
+} */
