@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 
-public class StudentDriver {
+public class StudentSortingDriver {
     
     static ArrayList<Student> StudentList = new ArrayList<Student>();
 
-    static void StudentSortingAlgorithm() {
+    static void StudentSortingAlgorithm(Comparator<Student> studentComparator) {
 
         int StudentListLength = StudentList.size();
 
@@ -14,7 +15,7 @@ public class StudentDriver {
 
             for (int j = i + 1; j < StudentListLength; j++) {
 
-                if (/*Comparator return here */ < 0) {
+                if (studentComparator.compare(StudentList.get(StudentListMinimumIndex), StudentList.get(j)) > 0) {
                     StudentListMinimumIndex = j;
                 }
             }
@@ -26,6 +27,7 @@ public class StudentDriver {
 
     public static void main(String[] args) {
 
+        // Instantiate student object from constructor
         Student newStudent1 = new Student("Harrison Martin", 16981, "2717 Hill Street");
         Student newStudent2 = new Student("Evangeline Park", 40735, "4344 Dark Hollow Road");
         Student newStudent3 = new Student("Brenda Dale", 924454, "4061 Cottonwood Lane");
@@ -49,11 +51,17 @@ public class StudentDriver {
         StudentList.add(newStudent9);
         StudentList.add(newStudent10);
 
+        // Instantiate new comparators
+        Comparator<Student> CompareName = new CompareStudentName();
+        Comparator<Student> CompareRollNo = new CompareStudentRollNo();
+
         // System.out.println(StudentList);
+        StudentList.forEach(System.out::println);
+        System.out.println("-----------------------------------------------\n");
+        StudentSortingAlgorithm(CompareName);
         for (Student student: StudentList) System.out.println(student);
         System.out.println("-----------------------------------------------\n");
-        StudentSortingAlgorithm(Student.CompareStudentName);
-        StudentSortingAlgorithm(Student.CompareStudentRollNo);
+        StudentSortingAlgorithm(CompareRollNo);
         for (Student student: StudentList) System.out.println(student);
     }
 }
@@ -103,4 +111,13 @@ static void StudentSortingAlgorithm() {
                 StudentList.set(StudentListMinimumIndex, StudentList.get(j));
                 StudentList.set(j, tempHolder);
     }
-} */
+} 
+    
+Two Ways to Instantiate an Object
+------------------------------
+
+Comparator<Student> CompareRollNo = new CompareStudentRollNo();
+
+StudentSortingAlgorithm(new CompareStudentName());
+
+StudentSortingAlgorithm(CompareRollNo); */

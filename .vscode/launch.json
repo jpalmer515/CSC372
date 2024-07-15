@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "StudentSortingDriver",
+            "request": "launch",
+            "mainClass": "StudentSortingDriver",
+            "projectName": "CSC372_8795193"
+        },
+        {
+            "type": "java",
             "name": "StudentDriver",
             "request": "launch",
             "mainClass": "StudentDriver",
