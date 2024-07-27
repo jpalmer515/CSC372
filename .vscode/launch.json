@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "GatherStudentData",
+            "request": "launch",
+            "mainClass": "CSC372_CTA8.GatherStudentData",
+            "projectName": "CSC372_8795193"
+        },
+        {
+            "type": "java",
             "name": "StudentSortingDriver",
             "request": "launch",
             "mainClass": "StudentSortingDriver",
