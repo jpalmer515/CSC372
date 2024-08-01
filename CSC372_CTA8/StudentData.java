@@ -33,7 +33,7 @@ public class StudentData {
     
     //Getters
     public String getName(String name) {
-    return this.name;
+        return this.name;
     }
     public String getAddress(String address) {
         return this.address;

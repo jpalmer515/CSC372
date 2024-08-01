@@ -7,7 +7,7 @@ public class GatherStudentData {
     Scanner StudentDataInput = new Scanner(System.in);
     LinkedList<StudentData> ListedStudentData = new LinkedList<StudentData>();
 
-    public void main(String[] args) {
+    public static void main(String[] args) {
 
         Scanner StudentDataInput = new Scanner(System.in);
 
@@ -16,19 +16,21 @@ public class GatherStudentData {
         String name;
         String address;
         Double gpa;
-
-        StudentData newStudent1 = new StudentData(name, address, gpa);
+        
+        StudentData newStudent1 = new StudentData("first", "address", 3.5);
 
         System.out.println("Please enter a FIRST and LAST name");
-        name = newStudent1.setName(StudentDataInput.nextLine());
+        newStudent1.setName(name = StudentDataInput.nextLine());
         
         System.out.println("Please enter an address");
-        address = newStudent1.setAddress(StudentDataInput.nextLine());
+        newStudent1.setAddress(address = StudentDataInput.nextLine());
         
         System.out.println("Please enter a GPA in the format of X.X, where X is a whole number");
-        gpa = newStudent1.setGpa(StudentDataInput.nextDouble());
+        newStudent1.setGpa(gpa = StudentDataInput.nextDouble());;
 
-        System.out.println(newStudent1);
+        System.out.println(newStudent1.getName(name));
+        System.out.println(newStudent1.getAddress(address));
+        System.out.println(newStudent1.getGpa(gpa));
         //for loop here
 
         System.out.println();
