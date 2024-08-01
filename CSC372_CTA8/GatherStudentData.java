@@ -25,7 +25,7 @@ public class GatherStudentData {
         System.out.println("Please enter an address");
         newStudent1.setAddress(address = StudentDataInput.nextLine());
         
-        System.out.println("Please enter a GPA in the format of X.X, where X is a whole number");
+        System.out.println("Please enter a GPA in the format of X.XX, where X is a whole number");
         newStudent1.setGpa(gpa = StudentDataInput.nextDouble());;
 
         System.out.println(newStudent1.getName(name));
